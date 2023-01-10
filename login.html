@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <title>Login</title>
+    </head>
+
+
+    <body>
+        <nav>
+            <a href="./index.html" class="index"> Jugendlichen registrieren</a>
+            <a href="./login.php" class="login active">Anwesenheit eintragen</a>
+            <a href="./statistik.html" class="statistik">Statistik</a>
+        </nav>
+        <br><br><br>
+        <div class="box">
+        <h1>Anwesenheitsliste</h1>
+            <div class="box2">
+			<form action="login.php" method="post">
+					Person: <br> 
+					Name: <input type="text" name="name">
+					Datum: <input type="date" name="date" id="dateId">
+					<br><br><br>
+				
+					<input type="submit" class="button">
+				
+			</form>	
+            </div>
+            <div class="box2">
+                <h2>Anwesend:</h2>
+                <ol>Name</ol>
+            </div>
+		
+        </div>
+    </body>
+</html>
