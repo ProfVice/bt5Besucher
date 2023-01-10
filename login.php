@@ -1,12 +1,4 @@
 <html>
-<!-- <body>
-Hallo <?php echo $_POST['name']; ?> ! Wie geht es dir? <br>
-Du hast dieses Datum gewählt: <?php echo $_POST["date"]; ?>
-</body>
--->
-
-
-
 <html lang="de">
     <head>
         <meta charset="utf-8">
@@ -26,7 +18,7 @@ Du hast dieses Datum gewählt: <?php echo $_POST["date"]; ?>
         <div class="box">
         <h1>Anwesenheitsliste</h1>
             <div class="box2">
-			<form action="login.php" method="post">
+			<form action="loginhandler.php" method="post">
 					Person: <br> 
 					Name: <input type="text" name="name">
 					Datum: <input type="date" name="date" id="dateId">
@@ -40,7 +32,7 @@ Du hast dieses Datum gewählt: <?php echo $_POST["date"]; ?>
                 <h2>Anwesend:</h2>
                 <?php
                     echo "<table style='border: solid 1px black;'>";
-                    echo "<tr><th>Id</th><th>Vorname</th><th>Alter</th></tr>";
+                    echo "<tr><th>Datum</th><th>Anzahl</th></tr>";
 
                     class TableRows extends RecursiveIteratorIterator {
                     function __construct($it) {
@@ -68,7 +60,7 @@ Du hast dieses Datum gewählt: <?php echo $_POST["date"]; ?>
                 try {
                   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                  $stmt = $conn->prepare("SELECT ID, jName, age FROM jugendliche");
+                  $stmt = $conn->prepare("SELECT besuchTag, anzahl FROM besuchStatistikTaglich");
                   $stmt->execute();
                 
                   // set the resulting array to associative
@@ -81,29 +73,14 @@ Du hast dieses Datum gewählt: <?php echo $_POST["date"]; ?>
                 }
                 $conn = null;
                 echo "</table>";
+
+                //header("Location:http://127.0.0.1/bt5/login.php"); 
+                //exit;
                 ?> 
             </div>
 		
         </div>
     </body>
-
-
-<?php
-$servername = "localhost";
-$username = "bt5";
-$password = "bt5pw";
-$dbname = "bt5";
-
-  try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-  } 
-    catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-  }
-?>
 
 
 
