@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 
+<head>
+  <title>Registrierung</title>
+</head>
 <?php
 $servername = "localhost";
 $username = "bt5";
@@ -21,58 +25,56 @@ try {
   // use exec() because no results are returned
   $conn->exec($sql);
   echo "New record created successfully";
-} catch(PDOException $e) {
+} catch (PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
 
 /*
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  if ($jsex == $man) {
-  echo "DIES GESCHLECHT: $jsex !!";
-  $sql2 = "UPDATE geschlecht SET man = man+1 WHERE ID = 2023"; }
-  $stmt= $pdo->prepare($sql2);
-  $stmt->execute($data);
-  echo "New record created successfully";
-  if ($jsex == $wman)
-  echo "WEIBLICH!";
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+// set the PDO error mode to exception
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if ($jsex == $man) {
+echo "DIES GESCHLECHT: $jsex !!";
+$sql2 = "UPDATE geschlecht SET man = man+1 WHERE ID = 2023"; }
+$stmt= $pdo->prepare($sql2);
+$stmt->execute($data);
+echo "New record created successfully";
+if ($jsex == $wman)
+echo "WEIBLICH!";
 }
 */
 
 if ($jsex == $man) {
-$sql = "UPDATE geschlecht SET man = man +1 WHERE ID=$jahr";
+  $sql = "UPDATE geschlecht SET man = man +1 WHERE ID=$jahr";
 
-$statement = $conn->prepare($sql);
+  $statement = $conn->prepare($sql);
 
-if($statement->execute($data)) {
-  echo "Post updated successfully!";
-}
-else {
-  $sql = "INSERT INTO `geschlecht`(`ID`, `woman`, `man`, `diverse`) VALUES ('2024','0','0','0')";
+  if ($statement->execute($data)) {
+    echo "Post updated successfully!";
+  } else {
+    $sql = "INSERT INTO `geschlecht`(`ID`, `woman`, `man`, `diverse`) VALUES ('2024','0','0','0')";
 
-$statement = $conn->prepare($sql);
-}
+    $statement = $conn->prepare($sql);
+  }
 }
 if ($jsex == $wman) {
   $sql = "UPDATE geschlecht SET woman = woman +1 WHERE ID=$jahr";
-  
+
   $statement = $conn->prepare($sql);
-  
-  if($statement->execute($data)) {
+
+  if ($statement->execute($data)) {
     echo "Post updated successfully!";
-  }
-  else {
+  } else {
     $sql = "INSERT INTO `geschlecht`(`ID`, `woman`, `man`, `diverse`) VALUES ('2024','0','0','0')";
-  
-  $statement = $conn->prepare($sql);
+
+    $statement = $conn->prepare($sql);
   }
 }
- 
+
 
 $conn = null;
-?> 
+?>
 
 <?php
 header("Location:https://127.0.0.1/bt5/index.html");

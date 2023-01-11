@@ -1,4 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title>Loginhandler</title>
+</head>
+</html>
 <?php
 $servername = "localhost";
 $username = "bt5";
@@ -12,12 +18,10 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->prepare("UPDATE besuchStatistikTaglich SET anzahl = anzahl +1 WHERE besuchTag=$besuchTag");
   $stmt->execute();
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
 }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-  }
 $conn = null;
-header("Location:http://127.0.0.1/bt5/login.php"); 
+header("Location:http://127.0.0.1/bt5/login.php");
 exit;
 ?>
-</html>

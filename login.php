@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html lang="de">
     <head>
         <meta charset="utf-8">
@@ -76,7 +76,7 @@
 
                 //header("Location:http://127.0.0.1/bt5/login.php"); 
                 //exit;
-                ?> 
+                ?>
             </div>
 		
         </div>

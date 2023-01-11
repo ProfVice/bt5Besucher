@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles.css">
-        <title>Statistik</title>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Statistik</title>
+  </head>
 
-
-    <body>
-        <nav>
-            <a href="./index.html" class="index"> Jugendlichen registrieren</a>
-            <a href="./login.php" class="login">Anwesenheit eintragen</a>
-            <a href="./statistik.html" class="statistik active">Statistik</a>
-        </nav>
-        <br><br><br>
-        <div class="box">
-        <h1>Statistik-Page</h1>
-        <br>
-        <div class="box2">
-            <button class="button center">Statistik neu laden</button>
-        </div>
-        <div class="box2">
+  <body>
+    <nav>
+      <a href="./index.html" class="index"> Jugendlichen registrieren</a>
+      <a href="./login.php" class="login">Anwesenheit eintragen</a>
+      <a href="./statistik.html" class="statistik active">Statistik</a>
+    </nav>
+    <br /><br /><br />
+    <div class="box">
+      <h1>Statistik-Page</h1>
+      <br />
+      <div class="box2">
+        <button class="button center">Statistik neu laden</button>
+      </div>
+      <div class="box2">
         <h2>Geschlechterverteilung Monat</h2>
-        <p>Monat: <select name="month" id="month">
+        <p>
+          Monat:
+          <select name="month" id="month">
             <option value="01">01</option>
             <option value="02">02</option>
             <option value="03">03</option>
@@ -36,58 +37,59 @@
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
-        </select></p>
-            <div>
-            <table id="td-monat-geschlecht">
-                <tr>
-                    <th>M</th>
-                    <th>W</th>
-                    <th>D</th>
-                    <th>Gesamt</th>
-                </tr>
-                <tr>
-                    <td id="td-anzahl-m">XY</td>
-                    <td id="td-anzahl-w">XY</td>
-                    <td id="td-anzahl-d">XY</td>
-                    <td id="td-anzahl-g">XY</td>
-                </tr>
-            </table>
-            </div>
+          </select>
+        </p>
+        <div>
+          <table id="td-monat-geschlecht">
+            <tr>
+              <th>M</th>
+              <th>W</th>
+              <th>D</th>
+              <th>Gesamt</th>
+            </tr>
+            <tr>
+              <td id="td-anzahl-m">XY</td>
+              <td id="td-anzahl-w">XY</td>
+              <td id="td-anzahl-d">XY</td>
+              <td id="td-anzahl-g">XY</td>
+            </tr>
+          </table>
         </div>
-        <div class="box2">
-            <h2>Geschlechterverteilung</h2>
-            Dieses Jahr insgesamt: 
-            <div id="jahresliste">
-                <table id="td-jahr-geschlecht">
-                    <tr>
-                        <th>M</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>Gesamt</th>
-                    </tr>
-                    <tr>
-                        <td id="td-anzahl-m">XY</td>
-                        <td id="td-anzahl-w">XY</td>
-                        <td id="td-anzahl-d">XY</td>
-                        <td id="td-anzahl-g">XY</td>
-                    </tr>
-                </table>
-            </div>
+      </div>
+      <div class="box2">
+        <h2>Geschlechterverteilung</h2>
+        Dieses Jahr insgesamt:
+        <div id="jahresliste">
+          <table id="td-jahr-geschlecht">
+            <tr>
+              <th>M</th>
+              <th>W</th>
+              <th>D</th>
+              <th>Gesamt</th>
+            </tr>
+            <tr>
+              <td id="td-anzahl-m">XY</td>
+              <td id="td-anzahl-w">XY</td>
+              <td id="td-anzahl-d">XY</td>
+              <td id="td-anzahl-g">XY</td>
+            </tr>
+          </table>
         </div>
-        <div class="box2">
-            <h2>Altersverteilung</h2>
-            Dieses Jahr insgesamt: 
-            <div id="jahresliste-alter">
-                <table id="td-jahr-alter">
-                    <tr>
-                        <th>XY Jahre</th>
-                    </tr>
-                    <tr>
-                        <td id="td-alter-01">XY</td>
-                    </tr>
-                </table>
-            </div>
+      </div>
+      <div class="box2">
+        <h2>Altersverteilung</h2>
+        Dieses Jahr insgesamt:
+        <div id="jahresliste-alter">
+          <table id="td-jahr-alter">
+            <tr>
+              <th>XY Jahre</th>
+            </tr>
+            <tr>
+              <td id="td-alter-01">XY</td>
+            </tr>
+          </table>
         </div>
-        </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
