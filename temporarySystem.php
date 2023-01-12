@@ -11,18 +11,23 @@
     <body>
         <nav>
             <a href="./index.html" class="index"> Jugendlichen registrieren</a>
-            <a href="./login.php" class="login active">Anwesenheit eintragen</a>
+            <a href="./login.php" class="login">Anwesenheit eintragen</a>
             <a href="./statistik.html" class="statistik">Statistik</a>
-            <a href="./temporarySystem.php" class="tempo">Temporär</a>
+            <a href="./temporarySystem.php" class="tempo active">Temporär</a>
         </nav>
         <br><br><br>
         <div class="box">
         <h1>Anwesenheitsliste</h1>
             <div class="box2">
-			<form action="loginhandler.php" method="post">
+			<form action="temphandler.php" method="post">
 					Person: <br> 
 					Name: <input type="text" name="name">
 					Datum: <input type="date" name="date" id="dateId">
+                    Geschlecht: <select name="jsex" id="geschlecht">
+                        <option value="M">M</option>
+                        <option value="W">W</option>
+                        <option value="D">D</option>
+                    </select>
 					<br><br><br>
 				
 					<input type="submit" class="button">
@@ -33,7 +38,7 @@
                 <h2>Anwesend:</h2>
                 <?php
                     echo "<table style='border: solid 1px black;'>";
-                    echo "<tr><th>Datum</th><th>Anzahl</th></tr>";
+                    echo "<tr><th>Datum</th><th>Name</th></tr>";
 
                     class TableRows extends RecursiveIteratorIterator {
                     function __construct($it) {
@@ -57,11 +62,12 @@
                 $username = "bt5";
                 $password = "bt5pw";
                 $dbname = "bt5";
+                $heute = date("Y-m-d");
 
                 try {
                   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                  $stmt = $conn->prepare("SELECT besuchTag, anzahl FROM besuchStatistikTaglich");
+                  $stmt = $conn->prepare("SELECT aDatum, jugName FROM tempBesucher WHERE aDatum = '$heute'");
                   $stmt->execute();
                 
                   // set the resulting array to associative
