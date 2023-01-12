@@ -22,6 +22,6 @@ try {
   echo "Error: " . $e->getMessage();
 }
 $conn = null;
-header("Location:http://127.0.0.1/bt5/login.php");
+header("Location: ./login.php");
 exit;
 ?>

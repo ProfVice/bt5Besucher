@@ -77,7 +77,7 @@ $conn = null;
 ?>
 
 <?php
-header("Location:https://127.0.0.1/bt5/index.html");
+header("Location:./index.html");
 exit();
 ?>
 

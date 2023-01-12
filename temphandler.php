@@ -33,6 +33,6 @@ try {
     echo $sql . "<br>" . $e->getMessage();
   }
   $conn = null;
-header("Location:http://127.0.0.1/bt5/temporarySystem.php");
+header("Location: ./temporarySystem.php");
 exit;
 ?>
