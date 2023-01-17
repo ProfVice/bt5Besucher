@@ -9,12 +9,24 @@
 
 
     <body>
-        <nav>
-            <a href="./index.html" class="index"> Jugendlichen registrieren</a>
-            <a href="./login.php" class="login">Anwesenheit eintragen</a>
-            <a href="./statistik.html" class="statistik">Statistik</a>
-            <a href="./temporarySystem.php" class="tempo active">Temporär</a>
-        </nav>
+    <nav>
+      <div id="nav-desktop">
+        <a href="./index.html" class="navlink index"> Jugendlichen registrieren</a>
+        <a href="./login.php" class="navlink login">Anwesenheit eintragen</a>
+        <a href="./statistik.html" class="navlink statistik">Statistik</a>
+        <a href="./temporarySystem.php" class="navlink tempo active">Temporär</a>
+    </div>
+    <div id="nav-mobil">
+      <label for="hamburger">&#9776;</label>
+      <input type="checkbox" id="hamburger">   
+      <div id="hamitems">   
+      <a href="./index.html" class="navlink index"> Jugendlichen registrieren</a>
+      <a href="./login.php" class="navlink login">Anwesenheit eintragen</a>
+      <a href="./statistik.html" class="navlink statistik">Statistik</a>
+      <a href="./temporarySystem.php" class="navlink tempo active">Temporär</a>
+      </div>
+    </div>  
+    </nav>
         <br><br><br>
         <div class="box">
         <h1>Anwesenheitsliste</h1>

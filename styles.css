@@ -9,12 +9,20 @@ html {
     display: table;
 }
 
+#nav-desktop {
+    display: all;
+}
+#nav-mobil {
+    display: none;
+}
+
 nav {
     margin: auto;
     left: 50%;
+    position: sticky;
 }
 
-nav>a{
+.navlink{
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -25,9 +33,55 @@ nav>a{
     border-radius: 2px;
     border-color: beige;
 }
-nav>a:hover {
+.navlink:hover {
     background-color: darkorange;
 }
+
+#nav-mobil label, #hamburger { display: none; }
+
+@media screen and (min-width: 769px){
+    #nav-mobil {
+        display: none;
+    }
+    #nav-desktop{
+        display:block
+    }
+    
+}
+
+/* [ON SMALL SCREENS] */
+@media screen and (max-width: 768px){
+    #nav-desktop {
+        display: none;
+    }
+    #nav-mobil {
+        display: block;
+    }
+    /* (A) BREAK INTO VERTICAL MENU */
+    #hamitems a {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border-top: 1px solid #333;
+    }
+   
+    /* (B) SHOW HAMBURGER ICON */
+    #nav-mobil label { 
+      display: inline-block; 
+      color: white;
+      background: darkorange;
+      font-style: normal;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    #hamitems a:hover { background: darkorange; }
+  
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems { display: none; }
+    #nav-mobil input:checked ~ #hamitems { display: block; }
+  }
+
 
 .active{
     background-color: darkorange;
@@ -43,6 +97,7 @@ nav>a:hover {
 }
 
 .box {
+    margin-top: 2rem;
     border: solid 2px beige;
 }
 .box2 {
@@ -82,3 +137,4 @@ h1{
 #alter {
     padding-right: 3rem;
 }
+
