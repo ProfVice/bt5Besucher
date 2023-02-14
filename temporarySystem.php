@@ -11,19 +11,17 @@
     <body>
     <nav>
       <div id="nav-desktop">
-        <a href="./index.html" class="navlink index"> Jugendlichen registrieren</a>
-        <a href="./login.php" class="navlink login">Anwesenheit eintragen</a>
-        <a href="./statistik.html" class="navlink statistik">Statistik</a>
-        <a href="./temporarySystem.php" class="navlink tempo active">Temporär</a>
+
+        <a href="./statistik.php" class="navlink statistik">Statistik</a>
+        <a href="./temporarySystem.php" class="navlink tempo active">Besucherliste</a>
     </div>
     <div id="nav-mobil">
       <label for="hamburger">&#9776;</label>
       <input type="checkbox" id="hamburger">   
       <div id="hamitems">   
-      <a href="./index.html" class="navlink index"> Jugendlichen registrieren</a>
-      <a href="./login.php" class="navlink login">Anwesenheit eintragen</a>
-      <a href="./statistik.html" class="navlink statistik">Statistik</a>
-      <a href="./temporarySystem.php" class="navlink tempo active">Temporär</a>
+
+      <a href="./statistik.php" class="navlink statistik">Statistik</a>
+      <a href="./temporarySystem.php" class="navlink tempo active">Besucherliste</a>
       </div>
     </div>  
     </nav>
@@ -40,6 +38,13 @@
                         <option value="W">W</option>
                         <option value="D">D</option>
                     </select>
+                    <br><br>
+          Alter: <select name="jAge" id="alter">
+                  <option value="1">10-13</option>
+                  <option value="2">14-17</option>
+                  <option value="3">18-24</option>
+                  </select>
+
 					<br><br><br>
 				
 					<input type="submit" class="button">
@@ -47,8 +52,9 @@
 			</form>	
             </div>
             <div class="box2">
-                <h2>Anwesend:</h2>
+                
                 <?php
+                    echo "<h2>Anwesend:</h2>";
                     echo "<table style='border: solid 1px black;'>";
                     echo "<tr><th>Datum</th><th>Name</th></tr>";
 
@@ -92,6 +98,7 @@
                 }
                 $conn = null;
                 echo "</table>";
+                
 
                 //header("Location:http://127.0.0.1/bt5/login.php"); 
                 //exit;
